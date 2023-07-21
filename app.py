@@ -23,7 +23,7 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        prompt_template='''user: {prompt}; you:'''
+        prompt_template=f'''user: {prompt}; you:'''
 
         pipe = pipeline(
             "text-generation",
