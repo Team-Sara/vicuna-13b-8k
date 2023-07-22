@@ -30,7 +30,7 @@ class InferlessPythonModel:
             model=self.model,
             tokenizer=self.tokenizer,
             max_new_tokens=512,
-            temperature=0.7,
+            temperature=0.85,
             top_p=0.14,
             repetition_penalty=1.17
         )
