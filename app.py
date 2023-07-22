@@ -23,7 +23,8 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        prompt_template=f'''user: {prompt}; you:'''
+        prompt_template=f'''USER: {prompt}
+        ASSISTANT:'''
 
         pipe = pipeline(
             "text-generation",
@@ -31,8 +32,8 @@ class InferlessPythonModel:
             tokenizer=self.tokenizer,
             max_new_tokens=512,
             temperature=0.92,
-            top_p=0.85,
-            repetition_penalty=1.17
+            top_p=0.95,
+            repetition_penalty=1.15
         )
         generated_text = pipe(prompt_template)[0]['generated_text']
         return {"generated_text": generated_text}
