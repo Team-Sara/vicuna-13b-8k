@@ -29,10 +29,10 @@ class InferlessPythonModel:
             "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
-            max_new_tokens=256,
-            temperature=0.73,
-            top_p=0.95,
-            repetition_penalty=1.2
+            max_new_tokens=512,
+            temperature=1.31,
+            top_p=0.14,
+            repetition_penalty=1.17
         )
         generated_text = pipe(prompt_template)[0]['generated_text']
         return {"generated_text": generated_text}
